@@ -6,9 +6,7 @@ on the frontend and **NestJS + TypeORM (SQLite)** on the backend, implemented ag
 Figma file.
 
 ## Live demo & repo
-- **Live app:** https://ablespace-task-management-qvbn4nz81-sonakshi-tiwaris-projects.vercel.app/
-- **Backend API:** https://ablespace-task-management-3770.onrender.com
-- **GitHub repo:** https://github.com/SONAKSHIGTIWARI/ablespace-task-management
+- **Live app:https://ablespace-task-management-phi.vercel.app/
 - **Part 2 submission:** [`part2/AbleSpace_Product_Understanding.docx`](./part2/AbleSpace_Product_Understanding.docx)
 
 > **Note:** the backend is on Render's free tier, which spins down after inactivity. The **first**
@@ -85,10 +83,6 @@ Open http://localhost:3000, click **Continue as Guest**.
 This project is already deployed and live (see links at the top). For reference, here's how it
 was set up:
 
-### 1. GitHub
-Pushed with multiple small, meaningful commits (one per feature/component) to
-[github.com/SONAKSHIGTIWARI/ablespace-task-management](https://github.com/SONAKSHIGTIWARI/ablespace-task-management),
-kept public.
 
 ### 2. Backend → Render (free tier)
 - **Root Directory:** `backend`
