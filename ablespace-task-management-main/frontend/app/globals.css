@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------
+   Design tokens
+   Two axes, matching the Figma "Change Theme" / "Color Mode" menus:
+   - .dark on <html>            -> light / dark theme
+   - [data-accent="..."] on <html> -> accent color family
+--------------------------------------------------- */
+
+:root {
+  --bg: #f7f7f8;
+  --surface: #ffffff;
+  --surface-2: #f2f2f4;
+  --border: #e7e7ea;
+  --text: #16161a;
+  --text-muted: #6b6b73;
+  --text-faint: #a6a6ad;
+  --sidebar-bg: #121214;
+  --sidebar-text: #d8d8dc;
+
+  --accent: #6d5bd0;
+  --accent-soft: #efecfb;
+  --accent-foreground: #ffffff;
+
+  --danger: #e5484d;
+  --danger-soft: #fde7e8;
+  --warning: #f2994a;
+  --warning-soft: #fdeee0;
+  --success: #2eb872;
+  --success-soft: #e4f6ed;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --shadow-card: 0 1px 2px rgba(16, 16, 20, 0.04), 0 1px 1px rgba(16, 16, 20, 0.03);
+  --shadow-pop: 0 12px 32px rgba(16, 16, 20, 0.14), 0 2px 8px rgba(16, 16, 20, 0.08);
+}
+
+html.dark {
+  --bg: #0e0e10;
+  --surface: #17171a;
+  --surface-2: #1e1e22;
+  --border: #2a2a2f;
+  --text: #f1f1f3;
+  --text-muted: #a3a3ab;
+  --text-faint: #6e6e77;
+  --sidebar-bg: #0a0a0b;
+  --sidebar-text: #c9c9cf;
+
+  --accent-soft: rgba(109, 91, 208, 0.16);
+  --danger-soft: rgba(229, 72, 77, 0.16);
+  --warning-soft: rgba(242, 153, 74, 0.16);
+  --success-soft: rgba(46, 184, 114, 0.16);
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-pop: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+html[data-accent="amber"]   { --accent: #d97706; --accent-soft: #fdf1dc; }
+html[data-accent="blue"]    { --accent: #6d5bd0; --accent-soft: #efecfb; }
+html[data-accent="pink"]    { --accent: #d6499a; --accent-soft: #fbe6f2; }
+html[data-accent="rose"]    { --accent: #e0345c; --accent-soft: #fbe4e9; }
+html[data-accent="emerald"] { --accent: #12946a; --accent-soft: #dff4ec; }
+html[data-accent="black"]   { --accent: #171718; --accent-soft: #e8e8e9; }
+
+html.dark[data-accent="amber"]   { --accent-soft: rgba(217, 119, 6, 0.18); }
+html.dark[data-accent="blue"]    { --accent-soft: rgba(109, 91, 208, 0.2); }
+html.dark[data-accent="pink"]    { --accent-soft: rgba(214, 73, 154, 0.18); }
+html.dark[data-accent="rose"]    { --accent-soft: rgba(224, 52, 92, 0.18); }
+html.dark[data-accent="emerald"] { --accent-soft: rgba(18, 148, 106, 0.2); }
+html.dark[data-accent="black"]   { --accent: #e8e8e9; --accent-soft: rgba(232, 232, 233, 0.14); }
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --color-sidebar-bg: var(--sidebar-bg);
+  --color-sidebar-text: var(--sidebar-text);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
